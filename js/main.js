@@ -14,6 +14,12 @@ import kpis from './lessons/kpis.js';
 import star from './lessons/star.js';
 import dax from './lessons/dax.js';
 import sqlmatch from './lessons/sqlmatch.js';
+import role from './lessons/role.js';
+import tools from './lessons/tools.js';
+import glossary from './lessons/glossary.js';
+import rootcause from './lessons/rootcause.js';
+import sqladv from './lessons/sqladv.js';
+import dmlines from './lessons/dmlines.js';
 import dmoverview from './lessons/dmoverview.js';
 import dmjoin from './lessons/dmjoin.js';
 import dmflags from './lessons/dmflags.js';
@@ -21,16 +27,17 @@ import dmmonths from './lessons/dmmonths.js';
 import dmnext from './lessons/dmnext.js';
 
 // Add a lesson = import it above and list it in a group below. A lesson with track: 'work' gets the WORK badge and shows under the Work filter.
-const BARREL = [crude, quality, conversion, crack, refineries];          // 01 core: what a refinery does and how it earns money
-const MOVING = [midstream, terminals, prices, forces];                   // 02 core: how product reaches customers and how it is priced
-const MKTOPS = [o2c, breaks, kpis];                                      // 03 core: the data a marketing-operations analyst owns
-const DESK = [star, dax, sqlmatch];                                      // 04 core: the analyst's tools
-const WORK = [dmoverview, dmjoin, dmflags, dmmonths, dmnext];            // 05 work: case study built on the Columbus Diesel Monitor; every lesson carries track: 'work'
-const LESSONS = [...BARREL, ...MOVING, ...MKTOPS, ...DESK, ...WORK];
+const ROLE = [role, tools];                                                // 01 core: the Marketing Operations Data Analyst role and its tools
+const BARREL = [crude, quality, conversion, crack, refineries];          // 02 core: what a refinery does and how it earns money
+const MOVING = [midstream, terminals, prices, forces, glossary];         // 03 core: how product reaches customers, how it is priced, and the vocabulary
+const MKTOPS = [o2c, breaks, kpis, rootcause];                           // 04 core: the data a marketing-operations analyst owns
+const DESK = [star, dax, sqlmatch, sqladv];                              // 05 core: the analyst's tools
+const WORK = [dmoverview, dmjoin, dmlines, dmflags, dmmonths, dmnext];   // 06 work: case study built on the Columbus Diesel Monitor; every lesson carries track: 'work'
+const LESSONS = [...ROLE, ...BARREL, ...MOVING, ...MKTOPS, ...DESK, ...WORK];
 const BRAND = 'FUEL / EXPLAINED';
 const TAB_TITLE = 'Fuel Explained';       // browser tab title, the same on every page
-const LANDING = 'crude';                  // lesson shown when the page opens without a #/lesson link
-const GROUPS = [['01', 'The barrel', BARREL], ['02', 'Moving & pricing', MOVING], ['03', 'Marketing operations data', MKTOPS], ['04', 'Analyst desk', DESK], ['05', 'Work: Diesel Monitor', WORK]];
+const LANDING = 'role';                   // lesson shown when the page opens without a #/lesson link
+const GROUPS = [['01', 'The role', ROLE], ['02', 'The barrel', BARREL], ['03', 'Moving & pricing', MOVING], ['04', 'Marketing operations data', MKTOPS], ['05', 'Analyst desk', DESK], ['06', 'Work: Diesel Monitor', WORK]];
 const SOON = [];
 
 const $ = (s, r = document) => r.querySelector(s);
@@ -202,7 +209,7 @@ function apply() {
   const last = step === L.steps.length - 1, nxt = nextLesson();
   $('#bk').disabled = step === 0;
   $('#nx').disabled = last && !nxt;
-  $('#nx').innerHTML = last ? (nxt ? `Next lesson: ${nxt.title.split(' ')[0]} <span>→</span>` : 'You made it <span>✓</span>') : `Next: ${L.steps[step + 1].short} <span>→</span>`;
+  $('#nx').innerHTML = last ? (nxt ? `Next lesson: ${nxt.title.length > 24 ? nxt.title.slice(0, 23).trimEnd() + '…' : nxt.title} <span>→</span>` : 'You made it <span>✓</span>') : `Next: ${L.steps[step + 1].short} <span>→</span>`;
   $('#sc').textContent = `${pad(step + 1)} of ${pad(L.steps.length)}`;
   document.querySelectorAll('.dot').forEach((d, i) => { d.classList.toggle('done', i < step); d.classList.toggle('cur', i === step); });
   document.querySelectorAll('#learn li').forEach((li, i) => li.classList.toggle('got', step >= L.learn[i].at));

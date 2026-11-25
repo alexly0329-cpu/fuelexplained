@@ -1,17 +1,28 @@
 # FUEL / EXPLAINED
 
-An interactive, plain-English guide to how crude oil becomes fuel, how fuel is moved and priced, how a fuel seller's orders turn into invoices, and how an analyst checks that chain with SQL and Power BI.
+An interactive, plain-English study site built around one role: the Marketing Operations Data Analyst at a refiner and marketer (Cenovus, Ohio). It covers the role and its tools, how refined fuel is made, moved and priced, how orders turn into invoices, the SQL and BI skills behind the reports, and a worked case study on public diesel purchasing records.
 
-It is the sister site of GRID / EXPLAINED and uses the same template: isometric scenes, a step-by-step stepper, a Knowledge Check, a lesson menu, search (Cmd/Ctrl + K) and light and dark themes. The colour is deep burgundy instead of green.
+It is the sister site of GRID / EXPLAINED and uses the same template: isometric scenes, a step-by-step stepper, a Knowledge Check, a lesson menu, search (Cmd/Ctrl + K) and light and dark themes. The colour is light burgundy with white action buttons.
+
+The site opens on **The Role** lesson and uses public information only: no interview material, no names, no inside claims. Re-read the current job posting before relying on any detail.
+
+## Menu (26 lessons)
+
+1. **The role** (2): The Role: Marketing Operations Data Analyst; The Analyst Toolbox (ETL, BI, automation)
+2. **The barrel** (5): crude, quality, conversion, crack spread, the three US refineries
+3. **Moving & pricing** (5): midstream, terminals and rack, price chain, supply and demand, Fuel Marketing Glossary
+4. **Marketing operations data** (4): Order to Cash, Where Records Break, KPIs for Order Data, Why Did the Number Move?
+5. **Analyst desk** (4): Star Schema, Measures/Columns/Refresh, SQL Matching Drills, SQL Beyond Matching
+6. **Work: Diesel Monitor** (6): the question, three files one chain, PO lines (taxes, blends, add-ons), matched/unmatched/flagged, monthly series, from Columbus diesel to a seller's desk
 
 ## Two tracks
 
-- **Core** (lessons 01 to 04, 15 lessons): general concepts such as crude in and products out, crack spreads, terminals, pricing, order-to-cash and SQL/DAX drills. They stand on their own.
-- **Work** (group 05, 5 lessons): case studies built on my own Columbus Diesel Order Monitor. Every one carries a WORK badge. The menu has an All / Core / Work switch, and it opens on Core.
+- **Core** (groups 01 to 05, 20 lessons): general concepts such as crude in and products out, crack spreads, terminals, pricing, order-to-cash and SQL/DAX drills. They stand on their own.
+- **Work** (group 06, 6 lessons): case studies built on my own Columbus Diesel Order Monitor. Every one carries a WORK badge. The menu has an All / Core / Work switch, and it opens on Core.
 
 The Work lessons describe an independent portfolio project built on public City Auditor records. It is not affiliated with the City of Columbus, any fuel supplier or any employer. Its numbers are a dated snapshot (Nov 5, 2026). The invoice-lag figures were computed for the lesson from that snapshot and are not published on the Monitor. The "From Columbus Diesel to a Seller's Desk" lesson contains proposals, not facts about any company.
 
-Dollar amounts in the Core lessons are labelled as illustrative or invented unless a source is named.
+Dollar amounts in the Core lessons are labelled as illustrative or invented unless a source is named. The tax-per-gallon medians in the Work lesson on PO lines were computed for the lesson from the same snapshot.
 
 ## Run it locally
 
@@ -27,7 +38,7 @@ Then open http://localhost:8000
 ## Add a lesson
 
 1. Copy an existing file in `js/lessons/` and change its `id`, title, scene (`build`) and `steps`.
-2. Import it at the top of `js/main.js` and add it to a group list (`BARREL`, `MOVING`, `MKTOPS`, `DESK` or `WORK`).
+2. Import it at the top of `js/main.js` and add it to a group list (`ROLE`, `BARREL`, `MOVING`, `MKTOPS`, `DESK` or `WORK`).
 3. For a case study based on my own work, add `track: 'work'` so it gets the WORK badge and appears under the Work filter.
 
 Step tags in use: CONCEPT, NUMBERS, PROBLEM, TRADE-OFF, METHOD, DATA, CASE, ROLE.

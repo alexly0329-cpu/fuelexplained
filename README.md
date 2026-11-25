@@ -1,17 +1,17 @@
-# FUEL / EXPLAINED
+FUEL / EXPLAINED
 
-An interactive, plain-English study site built around one role: the Marketing Operations Data Analyst at a refiner and marketer (Cenovus, Ohio). It covers the role and its tools, how refined fuel is made, moved and priced, how orders turn into invoices, the SQL and BI skills behind the reports, and a worked case study on public diesel purchasing records.
+An interactive, plain-English study site on refined fuel and the data work behind it. It covers the analyst's tools, how refined fuel is made, moved and priced, how orders turn into invoices, the SQL and BI skills behind the reports, and a worked case study on public diesel purchasing records.
 
 It is the sister site of GRID / EXPLAINED and uses the same template: isometric scenes, a step-by-step stepper, a Knowledge Check, a lesson menu, search (Cmd/Ctrl + K) and light and dark themes. The colour is light burgundy with white action buttons.
 
-The site opens on **The Role** lesson and uses public information only: no interview material, no names, no inside claims. Re-read the current job posting before relying on any detail.
+The site uses public information only: no names, no inside claims.
 
 ## Menu (26 lessons)
 
-1. **The role** (2): The Role: Marketing Operations Data Analyst; The Analyst Toolbox (ETL, BI, automation)
+1. **The role** (2): the data analyst role in fuel operations; The Analyst Toolbox (ETL, BI, automation)
 2. **The barrel** (5): crude, quality, conversion, crack spread, the three US refineries
 3. **Moving & pricing** (5): midstream, terminals and rack, price chain, supply and demand, Fuel Marketing Glossary
-4. **Marketing operations data** (4): Order to Cash, Where Records Break, KPIs for Order Data, Why Did the Number Move?
+4. **Operations data** (4): Order to Cash, Where Records Break, KPIs for Order Data, Why Did the Number Move?
 5. **Analyst desk** (4): Star Schema, Measures/Columns/Refresh, SQL Matching Drills, SQL Beyond Matching
 6. **Work: Diesel Monitor** (6): the question, three files one chain, PO lines (taxes, blends, add-ons), matched/unmatched/flagged, monthly series, from Columbus diesel to a seller's desk
 

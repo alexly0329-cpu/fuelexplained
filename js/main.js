@@ -258,7 +258,7 @@ function replay() {
 function togglePause() { paused = !paused; $('#scene').classList.toggle('paused', paused); $('#pause').innerHTML = ic(paused ? 'play' : 'pause'); }
 
 function route() {
-  const m = location.hash.match(/^#\/([a-z]+)\/(\d+)/);
+  const m = location.hash.match(/^#\/([a-z0-9]+)\/(\d+)/);
   const l = (m && LESSONS.find((x) => x.id === m[1])) || L || LESSONS.find((x) => x.id === LANDING) || LESSONS[0];
   if (l !== L) { mount(l); paused = false; }
   step = l.sandbox ? 0 : Math.max(0, Math.min(l.steps.length - 1, m ? parseInt(m[2], 10) - 1 : 0));
